@@ -11,6 +11,8 @@ RUN apt update && \
         dbus-x11 \
         openssh-server \
         sudo \
+        rofi \
+        terminator \
     && apt clean && rm -rf /var/lib/apt/lists/*
 
 # Create users
@@ -38,5 +40,6 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 EXPOSE 3389
+EXPOSE 22001
 
 ENTRYPOINT ["/entrypoint.sh"]
