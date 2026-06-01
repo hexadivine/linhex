@@ -1,6 +1,14 @@
 #!/bin/bash
 set -e
 
+echo "[+] Starting SSH Server..."
+
+mkdir -p /var/run/sshd
+sed -i 's/^#Port 22/Port 22001/' /etc/ssh/sshd_config || true
+
+/usr/sbin/sshd -D &
+
+
 echo "[+] Starting XRDP container..."
 
 # Clean stale PIDs
