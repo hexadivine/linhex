@@ -23,7 +23,7 @@ cat <<EOF > kali.desktop
 [Desktop Entry]
 Name=Kali
 Comment=Run commands on Kali via SSH
-Exec=sshpass -p kali ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null  -p 22001 -Y -C -c chacha20-poly1305@openssh.com kali@10.10.10.100 'rofi -show drun'
+Exec=sshpass -p kali ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null  -p 22001 -Y -C -c chacha20-poly1305@openssh.com kali@$IP 'rofi -show drun'
 Icon=distributor-logo-kali
 Terminal=false
 Type=Application
