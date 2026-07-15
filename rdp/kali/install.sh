@@ -8,11 +8,11 @@ sudo docker build . -t remote_kali_by_hexadivine
 
 sudo docker run -d --name remote_kali_by_hexadivine \
   --restart unless-stopped \
-  --network guac_guacnet \
+  --network host \
   --cap-add NET_ADMIN \
   --device /dev/net/tun \
-  -p 3389:3389 \
-  -p 22001:22001 \
+  -p 127.0.0.1:3389:3389 \
+  -p 127.0.0.1:22001:22001 \
   -v ~/.kali-rdp:/home/kali \
   remote_kali_by_hexadivine
 
